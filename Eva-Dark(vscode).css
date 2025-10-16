@@ -1,0 +1,479 @@
+/* =========================================================
+   Eva-Dark for TriliumNext – VSCode Eva Dark 严格配色
+   Optimized Structure - 2025-10
+========================================================= */
+
+:root {
+    --theme-style: dark;
+    
+    /* 字体设置 */
+    --main-font-family: "Segoe UI", system-ui, sans-serif;
+    --main-font-size: normal;
+    --tree-font-family: "Segoe UI", system-ui, sans-serif;
+    --tree-font-size: normal;
+    --detail-font-family: "Segoe UI", system-ui, sans-serif;
+    --detail-font-size: normal;
+    --monospace-font-family: "Cascadia Code", "Fira Code", monospace;
+    --monospace-font-size: normal;
+
+    /* Eva Dark 严格配色 - VSCode 标准 */
+    --eva-bg: #282c34;
+    --eva-bg2: #21252b;
+    --eva-bg3: #23272f;
+    --eva-bg4: #313440;
+    --eva-fg: #9da5b3;
+    --eva-fg2: #676e95;
+    --eva-cyan: #56b6c2;
+    --eva-purple: #c678dd;
+    --eva-green: #98c379;
+    --eva-orange: #d19a66;
+    --eva-red: #e06c75;
+    --eva-yellow: #e5c07b;
+    --eva-selection: #598def59;
+    --active-item-bg: #384e7a;
+
+    /* Trilium 标准变量映射 */
+    --main-background-color: var(--eva-bg);
+    --main-text-color: var(--eva-fg);
+    --main-border-color: var(--eva-bg4);
+
+    --accented-background-color: var(--eva-bg2);
+    --more-accented-background-color: var(--eva-bg3);
+
+    --button-background-color: var(--eva-bg3);
+    --button-text-color: var(--eva-fg);
+    --button-border-color: var(--eva-bg4);
+    --button-disabled-background-color: rgba(92, 99, 112, .25);
+    --button-disabled-text-color: var(--eva-fg2);
+
+    --primary-button-background-color: var(--eva-cyan);
+    --primary-button-text-color: var(--eva-bg2);
+    --primary-button-border-color: transparent;
+
+    --hover-item-background-color: var(--eva-selection);
+    --hover-item-text-color: var(--eva-cyan);
+    --active-item-background-color: var(--active-item-bg);
+    --active-item-text-color: var(--eva-cyan);
+
+    --left-pane-background-color: var(--eva-bg2);
+    --left-pane-text-color: var(--eva-fg);
+
+    --active-tab-background-color: var(--eva-bg);
+    --active-tab-text-color: var(--eva-fg);
+    --inactive-tab-background-color: var(--eva-bg2);
+    --inactive-tab-text-color: var(--eva-fg2);
+
+    --input-background-color: var(--eva-bg3);
+    --input-text-color: var(--eva-fg);
+    --menu-background-color: var(--eva-bg2);
+    --modal-background-color: var(--eva-bg);
+    --tooltip-background-color: var(--eva-bg3);
+    --link-color: var(--eva-cyan);
+
+    --mermaid-theme: dark;
+}
+
+/* === 基础布局 === */
+body, #root-widget, #left-pane, #right-pane, .modal-content {
+    background: var(--main-background-color) !important;
+    color: var(--main-text-color) !important;
+}
+
+/* === 树状视图 === */
+/* 第 1 级（顶层父标题）*/
+.fancytree-container > li > span .fancytree-title {
+    color: var(--eva-cyan);
+    font-size: 1.28em;
+    font-weight: 600;
+}
+/* 第 2 级（子标题）*/
+.fancytree-container > li > ul > li > span .fancytree-title {
+    color: var(--eva-purple);
+    font-size: 1.08em;
+    font-weight: 500;
+}
+/* 第 3 级（孙标题）*/
+.fancytree-container > li > ul > li > ul > li > span .fancytree-title {
+    color: var(--eva-green);
+    font-size: .98em;
+    font-weight: 400;
+}
+/* 第 4 级及以下（更弱）*/
+.fancytree-container > li > ul > li > ul > li > ul > li > span .fancytree-title {
+    color: var(--eva-orange);
+    font-size: .92em;
+    font-weight: 400;
+    opacity: .9;
+}
+
+.fancytree-node {
+    height: 28px !important;
+    border: 0px solid transparent !important;
+}
+
+.fancytree-node:hover {
+    background: var(--hover-item-background-color) !important;
+    border-radius: 3px;
+}
+
+.fancytree-active {
+    background: var(--active-item-background-color) !important;
+    color: var(--active-item-text-color) !important;
+    box-shadow: inset 3px 0 0 var(--eva-cyan) !important;
+}
+
+/* === 标签页系统 === */
+.tab-row-widget .note-tab-wrapper {
+    background: var(--inactive-tab-background-color);
+    color: var(--inactive-tab-text-color);
+}
+
+.tab-row-widget .note-tab[active] .note-tab-wrapper {
+    background: var(--active-tab-background-color);
+    color: var(--active-tab-text-color);
+    font-weight: 600;
+}
+
+.tab-row-filler {
+    background-color: var(--eva-bg3) !important;
+}
+
+/* === 标题和编辑区 === */
+.title-row input.note-title {
+    background: transparent;
+    color: var(--main-text-color);
+    font-weight: 600;
+    font-size: 1.8rem;
+    border: none;
+    box-shadow: none;
+}
+
+.title-row input.note-title:focus {
+    box-shadow: 0 0 0 2px var(--eva-cyan);
+    border-radius: 4px;
+}
+
+/* === 表单控件 === */
+.btn-primary {
+    background: var(--primary-button-background-color) !important;
+    color: var(--primary-button-text-color) !important;
+    border: none;
+}
+
+.btn-secondary {
+    background: var(--button-background-color) !important;
+    color: var(--button-text-color) !important;
+    border: 1px solid var(--button-border-color) !important;
+}
+
+.btn-secondary:hover {
+    color: #fff !important;
+}
+
+.form-control, input, select, textarea {
+    background: var(--input-background-color) !important;
+    color: var(--input-text-color) !important;
+    border: 1px solid var(--eva-bg4) !important;
+}
+
+.form-control:focus, input:focus {
+    box-shadow: 0 0 0 2px var(--eva-purple);
+    border-color: var(--eva-purple);
+}
+
+/* === 复选框和单选按钮 === */
+input[type="checkbox"], input[type="radio"] {
+    filter: none !important;
+    appearance: none;
+    -webkit-appearance: none;
+    width: 16px;
+    height: 16px;
+    border: 1px solid var(--eva-bg4) !important;
+    background: var(--eva-bg3) !important;
+    border-radius: 3px;
+    position: relative;
+    cursor: pointer;
+}
+
+input[type="radio"] {
+    border-radius: 50% !important;
+}
+
+input[type="checkbox"]:checked, input[type="radio"]:checked {
+    background: var(--eva-cyan) !important;
+    border-color: var(--eva-cyan) !important;
+}
+
+input[type="checkbox"]:checked::before {
+    content: "✓";
+    position: absolute;
+    color: var(--eva-bg2);
+    font-weight: bold;
+    font-size: 12px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+input[type="radio"]:checked::before {
+    content: "";
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    background: var(--eva-bg2);
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+input[type="checkbox"]:hover, input[type="radio"]:hover {
+    border-color: var(--eva-cyan) !important;
+}
+
+/* 开关控件 */
+.switch .slider {
+    background: var(--eva-bg3) !important;
+    border: 1px solid var(--eva-bg4) !important;
+}
+
+.switch input:checked + .slider {
+    background: var(--eva-cyan) !important;
+    border-color: var(--eva-cyan) !important;
+}
+
+.switch .slider::before {
+    background: var(--eva-fg) !important;
+}
+
+/* === 代码相关 === */
+.CodeMirror {
+    background: var(--eva-bg) !important;
+    color: var(--eva-fg) !important;
+}
+
+.CodeMirror-selected {
+    background: var(--eva-selection);
+}
+
+.cm-keyword { color: var(--eva-cyan); }
+.cm-string { color: var(--eva-green); }
+.cm-number { color: var(--eva-orange); }
+.cm-comment { color: var(--eva-fg2); font-style: italic; }
+.cm-operator, .cm-builtin { color: var(--eva-purple); }
+.cm-variable { color: var(--eva-fg); }
+.cm-atom, .cm-tag { color: var(--eva-yellow); }
+.CodeMirror-linenumber { color: var(--eva-fg2); }
+
+code:not(.CodeMirror-line) {
+    background: var(--eva-bg3) !important;
+    color: var(--eva-orange) !important;
+    padding: 2px 4px;
+    border-radius: 3px;
+}
+
+.ck-content pre {
+    background: var(--eva-bg2) !important;
+    border: 1px solid var(--eva-bg4) !important;
+    border-radius: 0 !important;
+}
+
+/* === 启动器和侧边栏 === */
+div#launcher-pane {
+    background: var(--eva-bg2) !important;
+    border-right: 1px solid var(--eva-bg3);
+}
+
+div#launcher-pane .icon-action {
+    color: var(--eva-fg) !important;
+}
+
+div#launcher-pane .icon-action:hover {
+    color: var(--eva-cyan) !important;
+}
+
+/* 添加：启动器按钮容器样式 */
+div#launcher-pane .component,
+div#launcher-pane .component button {
+    color: var(--eva-fg) !important; /* 使用更亮的颜色 */
+}
+
+div#launcher-pane .component button:hover {
+    color: var(--eva-cyan) !important;
+    background: var(--eva-selection) !important;
+}
+
+/* === 内容区域 === */
+#center-pane .note-detail,
+#center-pane .note-detail p,
+#center-pane .note-detail li,
+#center-pane .note-detail td {
+    color: var(--main-text-color) !important;
+}
+
+/* === 交互组件 === */
+.tree-actions .tree-floating-button {
+    background: var(--eva-bg3) !important;
+    color: var(--eva-fg) !important;
+    border: 1px solid var(--eva-bg4) !important;
+}
+
+.tree-actions .tree-floating-button:hover {
+    background: var(--eva-cyan) !important;
+    color: var(--eva-bg) !important;
+}
+
+.note-book-card {
+    background: var(--eva-bg2);
+    border: 1px solid var(--eva-bg4);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, .3);
+    border-radius: 0;
+}
+
+.note-book-card h5 {
+    color: var(--eva-cyan);
+}
+
+/* === 模态框和菜单 === */
+.modal-dialog, .modal-header, .modal-body {
+    background: var(--modal-background-color) !important;
+    color: var(--main-text-color) !important;
+    border-color: var(--eva-bg4) !important;
+}
+
+.modal-header {
+    border-bottom: 1px solid var(--eva-bg4) !important;
+}
+
+.modal-footer {
+    border-top: 1px solid var(--eva-bg4) !important;
+    background: var(--eva-bg3) !important;
+}
+
+/* === 右键菜单修复 === */
+.context-menu, .dropdown-menu {
+    background: var(--menu-background-color) !important;
+    border: 1px solid var(--eva-bg4) !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3) !important;
+}
+
+.context-menu-item, .dropdown-item {
+    color: var(--eva-fg) !important;
+    background: transparent !important;
+    border: none !important;
+}
+
+.context-menu-item:hover, .dropdown-item:hover {
+    background: var(--hover-item-background-color) !important;
+    color: var(--hover-item-text-color) !important;
+}
+
+.context-menu-item:active, .dropdown-item:active {
+    background: var(--active-item-background-color) !important;
+    color: var(--active-item-text-color) !important;
+}
+
+/* .context-menu-separator {
+    border-bottom: 1px solid var(--eva-bg4) !important;
+    margin: 4px 0 !important;
+} */
+
+/* 修复子菜单指示器 */
+/* .context-menu-item.has-submenu::after {
+    color: var(--eva-fg2) !important;
+    border-left-color: var(--eva-fg2) !important;
+}
+
+.context-menu-item.has-submenu:hover::after {
+    color: var(--eva-cyan) !important;
+    border-left-color: var(--eva-cyan) !important;
+} */
+
+/* 修复禁用菜单项 */
+/* .context-menu-item.disabled, .dropdown-item.disabled {
+    color: var(--eva-fg2) !important;
+    background: transparent !important;
+    cursor: not-allowed !important;
+    opacity: 0.6 !important;
+} */
+
+/* === 状态和工具 === */
+.status-bar {
+    background: var(--eva-bg2);
+    color: var(--eva-fg2);
+    border-top: 1px solid var(--eva-bg3);
+}
+
+/* === 链接和文本 === */
+a {
+    color: var(--link-color) !important;
+}
+
+a:hover {
+    color: var(--eva-purple) !important;
+}
+
+blockquote {
+    border-left: 4px solid var(--eva-cyan);
+    background: var(--eva-bg2);
+    padding: 8px 12px;
+}
+
+.search-highlight {
+    background: var(--eva-orange) !important;
+    color: var(--eva-bg) !important;
+    padding: 2px 4px;
+    border-radius: 2px;
+}
+
+/* === 表格 === */
+table th {
+    background: var(--eva-bg3);
+}
+
+table td, table th {
+    border: 1px solid var(--eva-bg4);
+}
+
+/* === 滚动条 === */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--eva-bg);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--eva-bg4);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--eva-cyan);
+}
+
+/* === 实用工具类 === */
+::placeholder {
+    color: var(--eva-fg2) !important;
+    opacity: .7;
+}
+
+::selection {
+    background: var(--eva-selection) !important;
+    color: var(--eva-cyan) !important;
+}
+
+.btn:disabled, .form-control:disabled {
+    background: var(--eva-bg4) !important;
+    color: var(--eva-fg2) !important;
+}
+
+.gutter {
+    width: 2px !important;
+    background: var(--eva-bg2) !important;
+}
+
+body ::-webkit-calendar-picker-indicator {
+    filter: invert(1);
+}
