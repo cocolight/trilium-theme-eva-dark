@@ -28,6 +28,7 @@ Trilium eva Dark Theme 是一个 trilium 主题，提供了更好看、更简约
 - [ ] 右键菜单字体颜色为黑色；
 - [ ] 格式菜单栏有部分图标颜色为深色，与主题色不匹配；
 - [ ] 左上角三叶草菜单为黑色；
+- [ ] 删除笔记的弹窗有点大，高度占满全屏。
 
 ## 参考项目
 + [trilium-vscode-dark-theme](https://github.com/greengeek/trilium-vscode-dark-theme)
