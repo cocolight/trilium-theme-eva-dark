@@ -1,0 +1,235 @@
+/* =========================================================
+   Eva-Dark for TriliumNext – VSCode Eva Dark 严格配色
+   Optimized Structure - 2025-10
+========================================================= */
+
+:root {
+    --theme-style: dark;
+
+    /* 字体 */
+    --main-font-family: "Segoe UI", system-ui, sans-serif;
+    --main-font-size: normal;
+    --tree-font-family: "Segoe UI", system-ui, sans-serif;
+    --tree-font-size: normal;
+    --detail-font-family: "Segoe UI", system-ui, sans-serif;
+    --detail-font-size: normal;
+    --monospace-font-family: "Cascadia Code", "Fira Code", monospace;
+    --monospace-font-size: normal;
+
+    /* Eva Dark 严格色板 */
+    --eva-bg: #282c34;
+    --eva-bg2: #21252b;
+    --eva-bg3: #23272f;
+    --eva-bg4: #313440;
+    --eva-fg: #9da5b3;
+    --eva-fg2: #676e95;
+    --eva-cyan: #56b6c2;
+    --eva-purple: #c678dd;
+    --eva-green: #98c379;
+    --eva-orange: #d19a66;
+    --eva-red: #e06c75;
+    --eva-yellow: #e5c07b;
+    --eva-selection: #598def59;
+    --active-item-bg: #384e7a;
+
+    /* Trilium 官方变量 - 完全 Eva 化 */
+    --main-background-color: var(--eva-bg);
+    --main-text-color: var(--eva-fg);
+    --main-border-color: var(--eva-bg4);
+
+    --accented-background-color: var(--eva-bg2);
+    --more-accented-background-color: var(--eva-bg3);
+
+    --button-background-color: var(--eva-bg3);
+    --button-text-color: var(--eva-fg);
+    --button-border-color: var(--eva-bg4);
+    --button-border-radius: 3px;
+    --button-disabled-background-color: rgba(92, 99, 112, .25);
+    --button-disabled-text-color: var(--eva-fg2);
+
+    --primary-button-background-color: var(--eva-cyan);
+    --primary-button-text-color: var(--eva-bg2);
+    --primary-button-border-color: transparent;
+
+    --muted-text-color: var(--eva-fg2);
+
+    --hover-item-background-color: var(--eva-selection);
+    --hover-item-text-color: var(--eva-cyan);
+    --hover-item-border-color: var(--eva-bg4);
+
+    --active-item-background-color: var(--active-item-bg);
+    --active-item-text-color: var(--eva-cyan);
+    --active-item-border-color: transparent;
+
+    --left-pane-background-color: var(--eva-bg2);
+    --left-pane-text-color: var(--eva-fg);
+
+    --launcher-pane-background-color: var(--eva-bg2);
+    --launcher-pane-text-color: var(--eva-fg2);
+
+    --active-tab-background-color: var(--eva-bg4);
+    --active-tab-hover-background-color: transparent;
+    --active-tab-text-color: var(--eva-fg);
+
+    --inactive-tab-background-color: var(--eva-bg2);
+    --inactive-tab-hover-background-color: var(--eva-bg4);
+    --inactive-tab-text-color: var(--eva-fg2);
+
+    --input-background-color: var(--eva-bg3);
+    --input-text-color: var(--eva-fg);
+
+    --menu-background-color: var(--eva-bg2);
+    --menu-text-color: var(--eva-fg);
+
+    --modal-background-color: var(--eva-bg);
+    --modal-backdrop-color: var(--eva-bg4);
+
+    --scrollbar-border-color: var(--eva-bg4);
+
+    --tooltip-background-color: var(--eva-bg3);
+
+    --link-color: var(--eva-cyan);
+
+    --mermaid-theme: dark;
+
+    --ck-color-code-block-label-background: var(--eva-bg4); /* ← 原 #333 */
+}
+
+/* === 基础布局 === */
+body, #root-widget, #left-pane, #right-pane, .modal-content {
+    background: var(--main-background-color) !important;
+    color: var(--main-text-color) !important;
+}
+
+/* === 树状视图 === */
+/* 第 1 级（顶层父标题）*/
+.fancytree-container > li > span .fancytree-title {
+    color: var(--eva-cyan);
+    font-size: 1.28em;
+    font-weight: 600;
+}
+/* 第 2 级（子标题）*/
+.fancytree-container > li > ul > li > span .fancytree-title {
+    color: var(--eva-purple);
+    font-size: 1.08em;
+    font-weight: 500;
+}
+/* 第 3 级（孙标题）*/
+.fancytree-container > li > ul > li > ul > li > span .fancytree-title {
+    color: var(--eva-green);
+    font-size: .98em;
+    font-weight: 400;
+}
+/* 第 4 级及以下（更弱）*/
+.fancytree-container > li > ul > li > ul > li > ul > li > span .fancytree-title {
+    color: var(--eva-orange);
+    font-size: .92em;
+    font-weight: 400;
+    opacity: .9;
+}
+
+.fancytree-node {
+    height: 28px !important;
+    border: 0px solid transparent !important;
+}
+
+.fancytree-node:hover {
+    background: var(--hover-item-background-color) !important;
+    border-radius: 3px;
+}
+
+.fancytree-active {
+    background: var(--active-item-background-color) !important;
+    color: var(--active-item-text-color) !important;
+}
+
+/* === 代码相关 === */
+.CodeMirror {
+    background: var(--eva-bg) !important;
+    color: var(--eva-fg) !important;
+}
+
+.CodeMirror-selected {
+    background: var(--eva-selection);
+}
+
+.cm-keyword { color: var(--eva-cyan); }
+.cm-string { color: var(--eva-green); }
+.cm-number { color: var(--eva-orange); }
+.cm-comment { color: var(--eva-fg2); font-style: italic; }
+.cm-operator, .cm-builtin { color: var(--eva-purple); }
+.cm-variable { color: var(--eva-fg); }
+.cm-atom, .cm-tag { color: var(--eva-yellow); }
+.CodeMirror-linenumber { color: var(--eva-fg2); }
+
+code:not(.CodeMirror-line) {
+    background: var(--eva-bg3) !important;
+    color: var(--eva-orange) !important;
+    padding: 2px 4px;
+    border-radius: 3px;
+}
+
+.ck-content pre {
+    background: var(--eva-bg2) !important;
+    border: 1px solid var(--eva-bg4) !important;
+    border-radius: 0 !important;
+}
+
+/* === 启动器和侧边栏 === */
+/* 鼠标悬停样式 */
+div#launcher-pane .component button:hover {
+    color: var(--eva-cyan) !important;
+    background: var(--eva-selection) !important;
+}
+
+/* === 单选框和复选框 === */
+input[type="checkbox"], input[type="radio"] {
+    filter: none !important;
+    appearance: none;
+    -webkit-appearance: none;
+    width: 16px;
+    height: 16px;
+    border: 1px solid var(--eva-bg4) !important;
+    background: var(--eva-bg3) !important;
+    border-radius: 3px;
+    position: relative;
+    cursor: pointer;
+}
+
+input[type="radio"] {
+    border-radius: 50% !important;
+}
+
+input[type="checkbox"]:checked, input[type="radio"]:checked {
+    background: var(--eva-cyan) !important;
+    border-color: var(--eva-cyan) !important;
+}
+
+input[type="checkbox"]:checked::before {
+    content: "✓";
+    position: absolute;
+    color: var(--eva-bg2);
+    font-weight: bold;
+    font-size: 12px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+input[type="radio"]:checked::before {
+    content: "";
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    background: var(--eva-bg2);
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+input[type="checkbox"]:hover, input[type="radio"]:hover {
+    border-color: var(--eva-cyan) !important;
+}
+
+
