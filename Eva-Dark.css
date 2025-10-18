@@ -1,19 +1,25 @@
 /* =========================================================
-   Eva-Dark for TriliumNext – VSCode Eva Dark 严格配色
-   Optimized Structure - 2025-10
-========================================================= */
+   EVA Dark Theme for Trilium
+   把下面整段贴进「Options → Appearance → Custom CSS」即可
+   ========================================================= */
 
+/* -------- 1. 语义化令牌映射（原 :root 部分） -------- */
 :root {
+    /* 基础品牌色 */
     --theme-style: dark;
 
-    /* 字体 */
-    --main-font-family: "Segoe UI", system-ui, sans-serif;
+    /* ---- 字体保持原尺寸，只换颜色 ---- */
+    --main-font-family: Helvetica, sans-serif;
     --main-font-size: normal;
-    --tree-font-family: "Segoe UI", system-ui, sans-serif;
+    --main-text-color: var(--eva-editor-foreground);
+
+    --tree-font-family: Helvetica, sans-serif;
     --tree-font-size: normal;
-    --detail-font-family: "Segoe UI", system-ui, sans-serif;
+
+    --detail-font-family: Helvetica, sans-serif;
     --detail-font-size: normal;
-    --monospace-font-family: "Cascadia Code", "Fira Code", monospace;
+
+    --monospace-font-family: 'Lucida Console', 'Courier New', Courier, monospace;
     --monospace-font-size: normal;
 
     /* ---- 基础背景 ---- */
@@ -113,80 +119,141 @@
     --eva-descriptionForeground: #b0b7c3bf;
     --eva-disabledForeground: #cccccc80;
 
-
-    /* Trilium 官方变量 */
-    /* 基础布局 */
+    /* ---- 背景 / 边框 ---- */
     --main-background-color: var(--eva-editor-background);
-    --main-text-color: var(--eva-editor-foreground);
     --main-border-color: var(--eva-panel-border);
 
-    /* 层级背景 */
-    --accented-background-color: var(--eva-input-background);
-    --more-accented-background-color: var(--eva-dropdown-background);
+    --accented-background-color: var(--eva-panel-background);
+    --more-accented-background-color: var(--eva-sideBar-background);
 
-    /* 按钮 */
+    /* ---- 按钮 ---- */
     --button-background-color: var(--eva-button-background);
-    --button-text-color: var(--eva-button-foreground);
     --button-border-color: transparent;
-    --button-disabled-background-color: #5c617d80;
-    --button-disabled-text-color: #cccccc80;
+    --button-text-color: var(--eva-button-foreground);
+    --button-border-radius: 3px;
+    --button-disabled-background-color: transparent;
+    --button-disabled-text-color: var(--eva-disabledForeground);
 
-    /* 主按钮 */
     --primary-button-background-color: var(--eva-button-hoverBackground);
-    --primary-button-text-color: #ffffff;
+    --primary-button-text-color: #fff;
     --primary-button-border-color: transparent;
 
-    /* 弱文本/提示 */
-    --muted-text-color: var(--eva-descriptionForeground);
+    /* ---- 输入 ---- */
+    --input-text-color: var(--eva-input-foreground);
+    --input-background-color: var(--eva-input-background);
 
-    /* 悬停 & 激活条目 */
-    --hover-item-background-color: var(--eva-list-hoverBackground);
-    --hover-item-text-color: var(--main-text-color);
-    --hover-item-border-color: transparent;
+    /* ---- 列表/树 选中+悬停 ---- */
+    --hover-item-text-color: var(--eva-list-hoverBackground);
+    --hover-item-background-color: transparent;
+    --hover-item-border-color: var(--eva-focusBorder);
 
-    --active-item-background-color: var(--eva-list-activeSelectionBackground);
     --active-item-text-color: var(--eva-list-activeSelectionForeground);
+    --active-item-background-color: var(--eva-list-activeSelectionBackground);
     --active-item-border-color: transparent;
 
-    /* 左右栏 */
+    /* ---- 菜单/下拉 ---- */
+    --menu-text-color: var(--eva-menu-foreground);
+    --menu-background-color: var(--eva-menu-background);
+
+    --dropdown-menu-background: var(--eva-dropdown-background);
+    --dropdown-menu-border: var(--eva-dropdown-border);
+
+    /* ---- 模态框 ---- */
+    --modal-background-color: var(--eva-dropdown-background);
+    --modal-backdrop-color: rgba(33,37,43,.75);
+
+    /* ---- 左栏 / 右栏 ---- */
     --left-pane-background-color: var(--eva-sideBar-background);
     --left-pane-text-color: var(--eva-sideBar-foreground);
 
     --launcher-pane-background-color: var(--eva-activityBar-background);
-    --launcher-pane-text-color: var(--eva-activityBar-foreground);
+    --launcher-pane-text-color: var(--eva-activityBar-inactiveForeground);
 
-    /* 标签页 */
+    /* ---- 标签页 ---- */
     --active-tab-background-color: var(--eva-tab-activeBackground);
-    --active-tab-hover-background-color: #2f323c;
+    --active-tab-hover-background-color: var(--eva-tab-activeBackground);
     --active-tab-text-color: var(--eva-tab-activeForeground);
 
     --inactive-tab-background-color: var(--eva-tab-inactiveBackground);
-    --inactive-tab-hover-background-color: #2f323c;
+    --inactive-tab-hover-background-color: var(--eva-list-hoverBackground);
     --inactive-tab-text-color: var(--eva-tab-inactiveForeground);
 
-    /* 输入 & 菜单 & 弹窗 */
-    --input-background-color: var(--eva-input-background);
-    --input-text-color: var(--eva-input-foreground);
+    /* ---- 其他细节 ---- */
+    --scrollbar-border-color: var(--eva-panel-border);
+    --tooltip-background-color: var(--eva-dropdown-background);
+    --link-color: var(--eva-terminal-ansiBlue);
 
-    --menu-background-color: var(--eva-menu-background);
-    --menu-text-color: var(--eva-menu-foreground);
+    --muted-text-color: var(--eva-descriptionForeground);
 
-    --modal-background-color: var(--eva-notifications-background);
-    --modal-backdrop-color: rgba(0,0,0,.65);
-
-    /* 滚动条 */
-    --scrollbar-border-color: var(--eva-scrollbarSlider-background);
-
-    /* 其他 */
-    --tooltip-background-color: var(--eva-menu-background);
-    --link-color: var(--eva-button-hoverBackground);
-
-    /* CK-Editor 代码块标签 */
-    --ck-color-code-block-label-background: var(--eva-input-background);
+    /* Mermaid / Editor 额外 */
+    --mermaid-theme: dark;
+    --ck-color-code-block-label-background: var(--eva-dropdown-background);
 }
 
+/* -------- 2. 强制覆盖 Trilium 写死样式 -------- */
 
-/* === 树状视图 === */
+/* 滚动条滑块 */
+::-webkit-scrollbar-thumb {
+    background: var(--eva-scrollbarSlider-background);
+}
+::-webkit-scrollbar-thumb:hover {
+    background: var(--eva-scrollbarSlider-hoverBackground);
+}
+::-webkit-scrollbar-thumb:active {
+    background: var(--eva-scrollbarSlider-activeBackground);
+}
+
+/* 日历选择器 */
+body ::-webkit-calendar-picker-indicator {
+    filter: invert(1) hue-rotate(180deg);
+}
+
+/* CodeMirror 反色适配 */
+body .CodeMirror {
+    filter: invert(90%) hue-rotate(180deg);
+}
+
+/* Excalidraw 暗黑 */
+.excalidraw.theme--dark {
+    --theme-filter: none !important;
+    background: var(--eva-editor-background) !important;
+}
+
+/* 分割条 */
+.gutter {
+    width: 2px !important;
+    background: var(--eva-panel-border) !important;
+}
+
+/* 树图标 */
+span.fancytree-custom-icon {
+    color: var(--eva-terminal-ansiCyan) !important;
+    background: none;
+}
+
+/* 树工具栏 */
+.tree-actions {
+    background-color: var(--eva-sideBar-background) !important;
+}
+
+/* 树节点 */
+span.fancytree-active {
+    border: 0 !important;
+    background-color: var(--eva-list-activeSelectionBackground) !important;
+}
+span.fancytree-active .fancytree-title {
+    font-weight: normal !important;
+}
+
+span.fancytree-node:hover {
+    border: 0 !important;
+    background-color: var(--eva-list-hoverBackground) !important;
+}
+.fancytree-node {
+    height: 28px !important;
+    border: 0 !important;
+}
+
 /* 第 1 级（顶层父标题）*/
 .fancytree-container > li > span .fancytree-title {
     color: var(--eva-terminal-ansiCyan);
@@ -216,83 +283,105 @@
     opacity: .9;
 }
 
-.fancytree-node {
-    height: 28px !important;
-    border: 0 solid transparent !important;
+/* 标签栏 */
+.tab-row-filler {
+    background-color: var(--eva-tab-inactiveBackground) !important;
+    height: 90% !important;
 }
-
-.fancytree-node:hover {
-    background: var(--hover-item-background-color) !important;
-    border-radius: 3px;
-}
-
-.fancytree-active {
-    background: var(--active-item-background-color) !important;
-    color: var(--active-item-text-color) !important;
-}
-
-/* === 代码相关 === */
-.CodeMirror {
-    background: var(--eva-editor-background) !important;
-    color: var(--eva-editor-foreground) !important;
-}
-
-.CodeMirror-selected {
-    background: var(--eva-editor-selectionBackground);
-}
-
-.cm-keyword {
-    color: var(--eva-terminal-ansiCyan);
-}
-
-.cm-string {
-    color: var(--eva-terminal-ansiGreen);
-}
-
-.cm-number {
-    color: var(--eva-terminal-ansiYellow);
-}
-
-.cm-comment {
-    color: var(--eva-descriptionForeground);
-    font-style: italic;
-}
-
-.cm-operator,
-.cm-builtin {
-    color: var(--eva-terminal-ansiMagenta);
-}
-
-.cm-variable {
-    color: var(--eva-editor-foreground);
-}
-
-.cm-atom,
-.cm-tag {
-    color: var(--eva-terminal-ansiBlue);
-}
-
-.CodeMirror-linenumber {
-    color: var(--eva-descriptionForeground);
-}
-
-code:not(.CodeMirror-line) {
-    background: var(--eva-input-background) !important;
-    color: var(--eva-terminal-ansiYellow) !important;
-    padding: 2px 4px;
-    border-radius: 3px;
-}
-
-.ck-content pre {
-    background: var(--eva-input-background) !important;
-    border: 1px solid var(--eva-input-border) !important;
+.tab-row-widget .note-tab .note-tab-wrapper {
     border-radius: 0 !important;
+}
+.tab-row-widget .note-tab[active] .note-tab-wrapper {
+    font-weight: normal !important;
+    border-radius: 0 !important;
+}
+
+/* 笔记卡片 */
+.note-book-card {
+    border-radius: 0 !important;
+    background-color: var(--eva-panel-background) !important;
+}
+
+/* 悬浮添加按钮 */
+button.tree-floating-button {
+    border: 0 transparent !important;
+}
+button.tree-floating-button:hover {
+    border: 0 transparent !important;
+    background-color: var(--eva-button-hoverBackground) !important;
+}
+
+/* CK 代码块 */
+.ck-content pre {
+    border: 1px solid var(--eva-dropdown-border) !important;
+    border-radius: 0 !important;
+    background-color: var(--eva-editor-background) !important;
+}
+
+/* 左上角汉堡 */
+div#launcher-pane .global-menu-button {
+    filter: invert(.5);
+}
+div#launcher-pane .global-menu-button:hover {
+    filter: invert(0);
 }
 
 /* === 启动器和侧边栏 === */
 div#launcher-pane .component button:hover {
     color: var(--eva-terminal-ansiCyan) !important;
     background: var(--eva-editor-selectionBackground) !important;
+}
+
+/* 新建页 */
+.note-new-tab {
+    background-color: var(--eva-sideBar-background) !important;
+}
+
+/* 右栏 */
+#right-pane {
+    background-color: var(--eva-sideBar-background) !important;
+}
+
+/* 下拉菜单 */
+.dropdown-menu.show {
+    background-color: var(--eva-dropdown-background) !important;
+    border: 1px solid var(--eva-dropdown-border) !important;
+}
+
+/* 按钮 focus 阴影 */
+.btn-primary.focus,
+.btn-primary:focus {
+    box-shadow: none;
+}
+
+/* Ribbon 顶部工具栏 */
+.ribbon-tab-title {
+    color: var(--eva-descriptionForeground) !important;
+    border-bottom: 1px solid var(--eva-panel-border) !important;
+}
+.ribbon-tab-spacer {
+    border-bottom: 1px solid var(--eva-panel-border) !important;
+}
+.ribbon-button-container {
+    border-bottom: 1px solid var(--eva-panel-border) !important;
+}
+.ribbon-button-container .icon-action {
+    color: var(--eva-descriptionForeground) !important;
+}
+
+/* 标题栏高度 */
+.title-row {
+    height: 70px !important;
+    min-height: 70px !important;
+    padding-top: 20px !important;
+}
+#right-pane .card-header {
+    padding: 8px !important;
+}
+
+/* CK 列表 hover */
+.ck.ck-list__item .ck-button:hover:not(.ck-disabled) {
+    background: var(--eva-list-hoverBackground);
 }
 
 /* === 单选框和复选框 === */
