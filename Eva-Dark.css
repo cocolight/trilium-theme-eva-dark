@@ -16,113 +16,201 @@
     --monospace-font-family: "Cascadia Code", "Fira Code", monospace;
     --monospace-font-size: normal;
 
-    /* Eva Dark 严格色板 */
-    --eva-bg: #282c34;
-    --eva-bg2: #21252b;
-    --eva-bg3: #23272f;
-    --eva-bg4: #313440;
-    --eva-fg: #9da5b3;
-    --eva-fg2: #676e95;
-    --eva-cyan: #56b6c2;
-    --eva-purple: #c678dd;
-    --eva-green: #98c379;
-    --eva-orange: #d19a66;
-    --eva-red: #e06c75;
-    --eva-yellow: #e5c07b;
-    --eva-selection: #598def59;
-    --active-item-bg: #384e7a;
+    /* ---- 基础背景 ---- */
+    --eva-editor-background: #282c34;
+    --eva-editor-foreground: #9da5b3;
 
-    /* Trilium 官方变量 - 完全 Eva 化 */
-    --main-background-color: var(--eva-bg);
-    --main-text-color: var(--eva-fg);
-    --main-border-color: var(--eva-bg4);
+    --eva-sideBar-background: #21252b;
+    --eva-sideBar-foreground: #8e99b1;
 
-    --accented-background-color: var(--eva-bg2);
-    --more-accented-background-color: var(--eva-bg3);
+    --eva-input-background: #23272f;
+    --eva-input-border: #181a1f;
+    --eva-input-foreground: #9da5b3;
 
-    --button-background-color: var(--eva-bg3);
-    --button-text-color: var(--eva-fg);
-    --button-border-color: var(--eva-bg4);
-    --button-border-radius: 3px;
-    --button-disabled-background-color: rgba(92, 99, 112, .25);
-    --button-disabled-text-color: var(--eva-fg2);
+    --eva-dropdown-background: #23272f;
+    --eva-dropdown-border: #181a1f;
+    --eva-dropdown-foreground: #9da5b3;
 
-    --primary-button-background-color: var(--eva-cyan);
-    --primary-button-text-color: var(--eva-bg2);
+    --eva-menu-background: #21252b;
+    --eva-menu-foreground: #8e99b1;
+
+    --eva-button-background: #676e9599;
+    --eva-button-foreground: #dcdfe5;
+    --eva-button-hoverBackground: #598defe6;
+
+    --eva-badge-background: #676e95e5;
+    --eva-badge-foreground: #ced5e1;
+
+    /* ---- 编辑器语义高亮 ---- */
+    --eva-editor-selectionBackground: #598def59;
+    --eva-editor-lineHighlightBackground: #2f323c;
+    --eva-editor-wordHighlightBackground: #0080997f;
+    --eva-editor-wordHighlightStrongBackground: #a78cfa72;
+
+    /* ---- 差异对比 ---- */
+    --eva-diffEditor-insertedTextBackground: #4ec15033;
+    --eva-diffEditor-removedTextBackground: #f14c4c4c;
+
+    /* ---- 终端 ---- */
+    --eva-terminal-background: #282c34;
+    --eva-terminal-foreground: #b0b7c3;
+    --eva-terminal-ansiRed: #e51400;
+    --eva-terminal-ansiGreen: #4ec150;
+    --eva-terminal-ansiYellow: #e4bf7f;
+    --eva-terminal-ansiBlue: #4283f5;
+    --eva-terminal-ansiMagenta: #cf68e1;
+    --eva-terminal-ansiCyan: #56b7c3;
+    --eva-terminal-ansiWhite: #fff;
+
+    /* ---- 列表/树 ---- */
+    --eva-list-activeSelectionBackground: #598def66;
+    --eva-list-activeSelectionForeground: #d7dae0;
+    --eva-list-hoverBackground: #598def66;
+    --eva-list-inactiveSelectionBackground: #30333d;
+
+    /* ---- 通知 ---- */
+    --eva-notifications-background: #21252b;
+    --eva-notifications-foreground: #b0b7c3;
+
+    /* ---- 状态栏 ---- */
+    --eva-statusBar-background: #21252b;
+    --eva-statusBar-foreground: #9da5b3;
+
+    /* ---- 标题栏 ---- */
+    --eva-titleBar-activeBackground: #282c34;
+    --eva-titleBar-activeForeground: #8e99b1;
+
+    /* ---- 活动栏 ---- */
+    --eva-activityBar-background: #282c34;
+    --eva-activityBar-foreground: #96a4cd;
+    --eva-activityBar-inactiveForeground: #5c617d;
+
+    /* ---- 标签页 ---- */
+    --eva-tab-activeBackground: #282c34;
+    --eva-tab-activeForeground: #d7dae0;
+    --eva-tab-inactiveBackground: #21252b;
+    --eva-tab-inactiveForeground: #676e95;
+
+    /* ---- 面板 ---- */
+    --eva-panel-background: #282c34;
+    --eva-panel-foreground: #b0b7c3;
+    --eva-panel-border: #21252b;
+
+    /* ---- Peek 视图 ---- Trilium 没有 */
+    --eva-peekView-border: #535773;
+    --eva-peekViewEditor-background: #2d3039;
+    --eva-peekViewResult-background: #282c34;
+    --eva-peekViewTitle-background: #282c34;
+
+    /* ---- 滚动条 ---- */
+    --eva-scrollbarSlider-background: #a2abe533;
+    --eva-scrollbarSlider-hoverBackground: #a2abe54c;
+    --eva-scrollbarSlider-activeBackground: #a2abe54c;
+
+    /* ---- 其他常用 ---- */
+    --eva-focusBorder: #4480f4;
+    --eva-errorForeground: #e51400;
+    --eva-descriptionForeground: #b0b7c3bf;
+    --eva-disabledForeground: #cccccc80;
+
+
+    /* Trilium 官方变量 */
+    /* 基础布局 */
+    --main-background-color: var(--eva-editor-background);
+    --main-text-color: var(--eva-editor-foreground);
+    --main-border-color: var(--eva-panel-border);
+
+    /* 层级背景 */
+    --accented-background-color: var(--eva-input-background);
+    --more-accented-background-color: var(--eva-dropdown-background);
+
+    /* 按钮 */
+    --button-background-color: var(--eva-button-background);
+    --button-text-color: var(--eva-button-foreground);
+    --button-border-color: transparent;
+    --button-disabled-background-color: #5c617d80;
+    --button-disabled-text-color: #cccccc80;
+
+    /* 主按钮 */
+    --primary-button-background-color: var(--eva-button-hoverBackground);
+    --primary-button-text-color: #ffffff;
     --primary-button-border-color: transparent;
 
-    --muted-text-color: var(--eva-fg2);
+    /* 弱文本/提示 */
+    --muted-text-color: var(--eva-descriptionForeground);
 
-    --hover-item-background-color: var(--eva-selection);
-    --hover-item-text-color: var(--eva-cyan);
-    --hover-item-border-color: var(--eva-bg4);
+    /* 悬停 & 激活条目 */
+    --hover-item-background-color: var(--eva-list-hoverBackground);
+    --hover-item-text-color: var(--main-text-color);
+    --hover-item-border-color: transparent;
 
-    --active-item-background-color: var(--active-item-bg);
-    --active-item-text-color: var(--eva-cyan);
+    --active-item-background-color: var(--eva-list-activeSelectionBackground);
+    --active-item-text-color: var(--eva-list-activeSelectionForeground);
     --active-item-border-color: transparent;
 
-    --left-pane-background-color: var(--eva-bg2);
-    --left-pane-text-color: var(--eva-fg);
+    /* 左右栏 */
+    --left-pane-background-color: var(--eva-sideBar-background);
+    --left-pane-text-color: var(--eva-sideBar-foreground);
 
-    --launcher-pane-background-color: var(--eva-bg2);
-    --launcher-pane-text-color: var(--eva-fg2);
+    --launcher-pane-background-color: var(--eva-activityBar-background);
+    --launcher-pane-text-color: var(--eva-activityBar-foreground);
 
-    --active-tab-background-color: var(--eva-bg4);
-    --active-tab-hover-background-color: transparent;
-    --active-tab-text-color: var(--eva-fg);
+    /* 标签页 */
+    --active-tab-background-color: var(--eva-tab-activeBackground);
+    --active-tab-hover-background-color: #2f323c;
+    --active-tab-text-color: var(--eva-tab-activeForeground);
 
-    --inactive-tab-background-color: var(--eva-bg2);
-    --inactive-tab-hover-background-color: var(--eva-bg4);
-    --inactive-tab-text-color: var(--eva-fg2);
+    --inactive-tab-background-color: var(--eva-tab-inactiveBackground);
+    --inactive-tab-hover-background-color: #2f323c;
+    --inactive-tab-text-color: var(--eva-tab-inactiveForeground);
 
-    --input-background-color: var(--eva-bg3);
-    --input-text-color: var(--eva-fg);
+    /* 输入 & 菜单 & 弹窗 */
+    --input-background-color: var(--eva-input-background);
+    --input-text-color: var(--eva-input-foreground);
 
-    --menu-background-color: var(--eva-bg2);
-    --menu-text-color: var(--eva-fg);
+    --menu-background-color: var(--eva-menu-background);
+    --menu-text-color: var(--eva-menu-foreground);
 
-    --modal-background-color: var(--eva-bg);
-    --modal-backdrop-color: var(--eva-bg4);
+    --modal-background-color: var(--eva-notifications-background);
+    --modal-backdrop-color: rgba(0,0,0,.65);
 
-    --scrollbar-border-color: var(--eva-bg4);
+    /* 滚动条 */
+    --scrollbar-border-color: var(--eva-scrollbarSlider-background);
 
-    --tooltip-background-color: var(--eva-bg3);
+    /* 其他 */
+    --tooltip-background-color: var(--eva-menu-background);
+    --link-color: var(--eva-button-hoverBackground);
 
-    --link-color: var(--eva-cyan);
-
-    --mermaid-theme: dark;
-
-    --ck-color-code-block-label-background: var(--eva-bg4); /* ← 原 #333 */
+    /* CK-Editor 代码块标签 */
+    --ck-color-code-block-label-background: var(--eva-input-background);
 }
 
-/* === 基础布局 === */
-body, #root-widget, #left-pane, #right-pane, .modal-content {
-    background: var(--main-background-color) !important;
-    color: var(--main-text-color) !important;
-}
 
 /* === 树状视图 === */
 /* 第 1 级（顶层父标题）*/
 .fancytree-container > li > span .fancytree-title {
-    color: var(--eva-cyan);
+    color: var(--eva-terminal-ansiCyan);
     font-size: 1.28em;
     font-weight: 600;
 }
+
 /* 第 2 级（子标题）*/
 .fancytree-container > li > ul > li > span .fancytree-title {
-    color: var(--eva-purple);
+    color: var(--eva-terminal-ansiMagenta);
     font-size: 1.08em;
     font-weight: 500;
 }
+
 /* 第 3 级（孙标题）*/
 .fancytree-container > li > ul > li > ul > li > span .fancytree-title {
-    color: var(--eva-green);
+    color: var(--eva-terminal-ansiGreen);
     font-size: .98em;
     font-weight: 400;
 }
+
 /* 第 4 级及以下（更弱）*/
 .fancytree-container > li > ul > li > ul > li > ul > li > span .fancytree-title {
-    color: var(--eva-orange);
+    color: var(--eva-terminal-ansiYellow);
     font-size: .92em;
     font-weight: 400;
     opacity: .9;
@@ -130,7 +218,7 @@ body, #root-widget, #left-pane, #right-pane, .modal-content {
 
 .fancytree-node {
     height: 28px !important;
-    border: 0px solid transparent !important;
+    border: 0 solid transparent !important;
 }
 
 .fancytree-node:hover {
@@ -145,52 +233,78 @@ body, #root-widget, #left-pane, #right-pane, .modal-content {
 
 /* === 代码相关 === */
 .CodeMirror {
-    background: var(--eva-bg) !important;
-    color: var(--eva-fg) !important;
+    background: var(--eva-editor-background) !important;
+    color: var(--eva-editor-foreground) !important;
 }
 
 .CodeMirror-selected {
-    background: var(--eva-selection);
+    background: var(--eva-editor-selectionBackground);
 }
 
-.cm-keyword { color: var(--eva-cyan); }
-.cm-string { color: var(--eva-green); }
-.cm-number { color: var(--eva-orange); }
-.cm-comment { color: var(--eva-fg2); font-style: italic; }
-.cm-operator, .cm-builtin { color: var(--eva-purple); }
-.cm-variable { color: var(--eva-fg); }
-.cm-atom, .cm-tag { color: var(--eva-yellow); }
-.CodeMirror-linenumber { color: var(--eva-fg2); }
+.cm-keyword {
+    color: var(--eva-terminal-ansiCyan);
+}
+
+.cm-string {
+    color: var(--eva-terminal-ansiGreen);
+}
+
+.cm-number {
+    color: var(--eva-terminal-ansiYellow);
+}
+
+.cm-comment {
+    color: var(--eva-descriptionForeground);
+    font-style: italic;
+}
+
+.cm-operator,
+.cm-builtin {
+    color: var(--eva-terminal-ansiMagenta);
+}
+
+.cm-variable {
+    color: var(--eva-editor-foreground);
+}
+
+.cm-atom,
+.cm-tag {
+    color: var(--eva-terminal-ansiBlue);
+}
+
+.CodeMirror-linenumber {
+    color: var(--eva-descriptionForeground);
+}
 
 code:not(.CodeMirror-line) {
-    background: var(--eva-bg3) !important;
-    color: var(--eva-orange) !important;
+    background: var(--eva-input-background) !important;
+    color: var(--eva-terminal-ansiYellow) !important;
     padding: 2px 4px;
     border-radius: 3px;
 }
 
 .ck-content pre {
-    background: var(--eva-bg2) !important;
-    border: 1px solid var(--eva-bg4) !important;
+    background: var(--eva-input-background) !important;
+    border: 1px solid var(--eva-input-border) !important;
     border-radius: 0 !important;
 }
 
 /* === 启动器和侧边栏 === */
-/* 鼠标悬停样式 */
 div#launcher-pane .component button:hover {
-    color: var(--eva-cyan) !important;
-    background: var(--eva-selection) !important;
+    color: var(--eva-terminal-ansiCyan) !important;
+    background: var(--eva-editor-selectionBackground) !important;
 }
 
 /* === 单选框和复选框 === */
-input[type="checkbox"], input[type="radio"] {
+input[type="checkbox"],
+input[type="radio"] {
     filter: none !important;
     appearance: none;
     -webkit-appearance: none;
     width: 16px;
     height: 16px;
-    border: 1px solid var(--eva-bg4) !important;
-    background: var(--eva-bg3) !important;
+    border: 1px solid var(--eva-input-border) !important;
+    background: var(--eva-input-background) !important;
     border-radius: 3px;
     position: relative;
     cursor: pointer;
@@ -200,15 +314,16 @@ input[type="radio"] {
     border-radius: 50% !important;
 }
 
-input[type="checkbox"]:checked, input[type="radio"]:checked {
-    background: var(--eva-cyan) !important;
-    border-color: var(--eva-cyan) !important;
+input[type="checkbox"]:checked,
+input[type="radio"]:checked {
+    background: var(--eva-terminal-ansiCyan) !important;
+    border-color: var(--eva-terminal-ansiCyan) !important;
 }
 
 input[type="checkbox"]:checked::before {
     content: "✓";
     position: absolute;
-    color: var(--eva-bg2);
+    color: var(--eva-input-background);
     font-weight: bold;
     font-size: 12px;
     top: 50%;
@@ -221,15 +336,36 @@ input[type="radio"]:checked::before {
     position: absolute;
     width: 6px;
     height: 6px;
-    background: var(--eva-bg2);
+    background: var(--eva-input-background);
     border-radius: 50%;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
 
-input[type="checkbox"]:hover, input[type="radio"]:hover {
-    border-color: var(--eva-cyan) !important;
+input[type="checkbox"]:hover,
+input[type="radio"]:hover {
+    border-color: var(--eva-terminal-ansiCyan) !important;
 }
 
+/* === left-panel 的 quick-search === */
+/* 1. 给 quick-search 整体左侧 10 px 内边距 */
+.quick-search {
+    padding: 10px !important;
+}
 
+/* 2. 按钮隐身且不占宽度 */
+.quick-search .search-button {
+    visibility: hidden;
+    width: 0 !important;
+    min-width: 0 !important;
+    padding: 0 !important;
+    border: 0 !important;
+    margin: 0 !important;
+}
+
+/* 3. 输入框圆角收回，视觉对齐 */
+.quick-search .form-control {
+    border-top-left-radius: var(--bs-border-radius-sm) !important;
+    border-bottom-left-radius: var(--bs-border-radius-sm) !important;
+}
