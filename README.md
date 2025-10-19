@@ -8,7 +8,7 @@ Trilium eva Dark Theme 是一个 trilium 主题，提供了更好看、更简约
 
 ![image-20251018191346155](./assets/image-20251018191346155.png)
 
-![image-20251018182346902](./assets/image-20251018182346902.png)
+![image-20251019110655720](./assets/image-20251019110655720.png)
 
 ![image-20251018191416899](./assets/image-20251018191416899.png)
 
@@ -17,7 +17,7 @@ Trilium eva Dark Theme 是一个 trilium 主题，提供了更好看、更简约
 按照以下步骤安装：
 
 1. 创建一个新笔记，类型为 CSS，命名为 Eva-Dark 
-2. 选择一个主题，然后复制主题的内容到刚才创建的笔记
+2. 然后复制主题的内容到刚才创建的笔记
 3. 添加 `#appTheme=Eva-Dark` 属性
 4. 在 **Menu** →  **Options** 里面选择 **Eva-Dark** 主题
 5. 按下 F5 或 Ctrl + R 重载页面
