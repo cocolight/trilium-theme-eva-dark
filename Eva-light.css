@@ -1,0 +1,476 @@
+:root {
+    --theme-style: light;
+
+    --main-font-family: Helvetica;
+    --main-font-size: normal;
+
+    --tree-font-family: Helvetica;
+    --tree-font-size: normal;
+
+    --detail-font-family: Helvetica;
+    --detail-font-size: normal;
+
+    --monospace-font-family: 'Lucida Console', 'Courier New', Courier;
+    --monospace-font-size: normal;
+
+    /* === Trilium 变量 - 浅色主题 === */
+
+    /* ---- 背景 / 边框 ---- */
+    --main-background-color: #ffffff;
+    --main-text-color: #333333;
+    --main-border-color: #e1e1e1;
+
+    --accented-background-color: #f8f9fa;
+    --more-accented-background-color: #e9ecef;
+
+    /* ---- 按钮 ---- */
+    --button-background-color: #8fa0b5;
+    --button-border-color: transparent;
+    --button-text-color: #ffffff;
+    --button-border-radius: 4px;
+    --button-disabled-background-color: transparent;
+    --button-disabled-text-color: #6c757d;
+
+    --primary-button-background-color: #007bff;
+    --primary-button-text-color: #ffffff;
+    --primary-button-border-color: transparent;
+
+    --muted-text-color: #6c757d;
+
+    --input-text-color: #495057;
+    --input-background-color: #ffffff;
+
+    --hover-item-text-color: #495057;
+    --hover-item-background-color: #f8f9fa;
+    --hover-item-border-color: #007bff;
+
+    /* 调整选中项颜色为更柔和的蓝色 */
+    --active-item-text-color: #ffffff;
+    --active-item-background-color: #4dabf7;
+    --active-item-border-color: transparent;
+
+    /* ---- 菜单/下拉 ---- */
+    --menu-text-color: #495057;
+    --menu-background-color: #ffffff;
+
+    /* ---- 模态框 ---- */
+    --modal-background-color: #ffffff;
+    --modal-backdrop-color: rgba(0,0,0,.5);
+
+    /* ---- 左栏 / 右栏 ---- */
+    --left-pane-background-color: #f8f9fa;
+    --left-pane-text-color: #495057;
+
+    --launcher-pane-background-color: #e9ecef;
+    --launcher-pane-text-color: #6c757d;
+
+    /* ---- 标签页 ---- */
+    --active-tab-background-color: transparent;
+    --active-tab-hover-background-color: transparent;
+    --active-tab-text-color: #007bff;
+
+    --inactive-tab-background-color: #f8f9fa;
+    --inactive-tab-hover-background-color: #e9ecef;
+    --inactive-tab-text-color: #6c757d;
+
+    /* ---- 其他细节 ---- */
+    --scrollbar-border-color: #e1e1e1;
+    --tooltip-background-color: #ffffff;
+    --link-color: #007bff;
+
+    --mermaid-theme: default;
+    --ck-color-code-block-label-background: #2d3748;
+}
+
+/* 树工具栏按钮样式调整 */
+.tree-actions button {
+    background-color: #8fa0b5 !important;
+    border: 1px solid #6c7b8c !important;
+    color: #ffffff !important;
+    border-radius: 4px !important;
+    transition: all 0.2s ease !important;
+}
+
+.tree-actions button:hover {
+    background-color: #6c7b8c !important;
+    border-color: #5a6775 !important;
+    transform: translateY(-1px);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.tree-actions button:active {
+    background-color: #5a6775 !important;
+    transform: translateY(0);
+}
+
+/* 日期控件的小日历图标，恢复默认 */
+body ::-webkit-calendar-picker-indicator {
+    filter: invert(0);
+}
+
+/* 内置代码编辑器，移除反色滤镜 */
+body .CodeMirror {
+    filter: none;
+}
+
+/* 手绘白板 Excalidraw，移除反色滤镜 */
+.excalidraw.theme--dark {
+    --theme-filter: none !important;
+}
+
+/* 左右分栏中间那条「拖动分割条」：浅色风格 */
+.gutter {
+    width: 1px !important;
+    background: #dee2e6 !important;
+}
+
+/* 树工具栏（搜索/增删按钮那一行）背景浅灰。 */
+.tree-actions {
+  background-color: #f8f9fa !important;
+  padding: 8px !important;
+}
+
+/* 第 1 级（顶层父标题）*/
+.fancytree-container > li > span .fancytree-title {
+    font-size: 1.28em;
+    font-weight: 600;
+    color: #2c3e50;
+}
+
+/* 第 2 级（子标题）*/
+.fancytree-container > li > ul > li > span .fancytree-title {
+    font-size: 1.20em;
+    font-weight: 500;
+    color: #34495e;
+}
+
+/* 第 3 级（孙标题）*/
+.fancytree-container > li > ul > li > ul > li > span .fancytree-title {
+    font-size: 1.16em;
+    font-weight: 400;
+    color: #495057;
+}
+
+/* 第 4 级及以下（更弱）*/
+.fancytree-container > li > ul > li > ul > li > ul > li > span .fancytree-title {
+    font-size: 1.08em;
+    font-weight: 400;
+    opacity: .9;
+    color: #6c757d;
+}
+
+/* 当前被选中的笔记节点：去掉边框 */
+span.fancytree-active .fancytree-title {
+  font-weight: normal !important;
+  color: #ffffff !important;
+}
+
+/* 当前被选中的笔记节点：使用更柔和的蓝色背景 */
+span.fancytree-active {
+  border: 0px !important;
+  background-color: #4dabf7 !important;
+}
+
+/* 标签页右侧空白 filler */
+.tab-row-filler {
+  background-color: #ffffff !important;
+  height: 90% !important;
+}
+
+/* 把标签页的圆角切成"0"，做成直角。 */
+.tab-row-widget .note-tab .note-tab-wrapper {
+  border-radius: 0px !important;
+}
+
+.tab-row-widget .note-tab[active] .note-tab-wrapper {
+  font-weight: normal !important;
+  border-radius: 0px !important;
+}
+
+/* 卡片视图里的笔记块：直角 + 浅灰背景。 */
+.note-book-card {
+  border-radius: 0px !important;
+  background-color: #f8f9fa !important;
+  border: 1px solid #e1e1e1 !important;
+}
+
+button.tree-floating-button:hover {
+  border: 0px transparent !important;
+  background-color: #4dabf7 !important;
+}
+
+/* 左下角"+"浮动按钮：无边框，悬停时背景 */
+button.tree-floating-button {
+    border: 0px transparent !important;
+    color: #ffffff !important;
+    background-color: #8fa0b5 !important;
+}
+
+/* CKEditor 代码块：调整为暗色背景 */
+.ck-content pre {
+  border: 1px solid #374151 !important;
+  background-color: #1f2937 !important;
+  color: #e5e7eb !important;
+}
+
+/* 代码块标签背景调整为暗色 */
+.ck.ck-code-block .ck-code-block__label {
+  background: #374151 !important;
+  color: #e5e7eb !important;
+}
+
+/* 左上角"汉堡"图标：默认颜色 */
+div#launcher-pane .global-menu-button {
+  filter: invert(0);
+    background-color: transparent !important;
+}
+
+div#launcher-pane .global-menu-button:hover {
+  filter: invert(0.3);
+}
+
+/* "新建标签页"的 + 按钮 */
+.note-new-tab {
+  background-color: #ffffff !important;
+}
+
+/* 左侧菜单鼠标悬浮样式 */
+div#launcher-pane .component button:hover {
+    color: #007bff !important;
+    background: #e9ecef !important;
+}
+
+/* 树节点统一高度 28 px，去掉边框。 */
+.fancytree-node {
+    height: 28px !important;
+    border: 0px solid transparent !important;
+}
+
+span.fancytree-node:hover {
+  border: 0px !important;
+  background-color: #e3f2fd !important;
+}
+
+/* 右侧属性/备注面板：背景 */
+#right-pane {
+    background-color: #f8f9fa !important;
+}
+
+/* 所有下拉菜单：背景 */
+.dropdown-menu.show {
+    background-color: #ffffff !important;
+    border: 1px solid #e1e1e1 !important;
+}
+
+/* 主按钮聚焦时去掉蓝色光晕（`box-shadow:none`）。 */
+.btn-primary.focus, .btn-primary:focus {
+    box-shadow: none
+}
+
+/* 顶部 Ribbon 工具栏：字体颜色 + 下边框统一颜色 */
+.ribbon-tab-title {
+    color: #6c757d !important;
+    border-bottom: 1px solid #dee2e6 !important;
+}
+
+.ribbon-tab-spacer {
+    border-bottom: 1px solid #dee2e6 !important;
+}
+
+.ribbon-button-container .icon-action {
+    color: #495057 !important;
+}
+
+.ribbon-button-container {
+    border-bottom: 1px solid #dee2e6 !important;
+}
+
+/* 标题栏高度 70 px，上内边距 20 px，让标题垂直居中。 */
+.title-row {
+    height: 70px !important;
+    min-height: 70px !important;
+    padding-top: 20px !important;
+    background-color: #f8f9fa !important;
+}
+
+/* 属性面板卡片头部，内边距压到 8 px，更紧凑 */
+#right-pane .card-header {
+    padding: 8px !important;
+    background-color: #e9ecef !important;
+}
+
+/* CKEditor 里下拉列表项悬停：背景 */
+.ck.ck-list__item .ck-button:hover:not(.ck-disabled) {
+    background: #e9ecef;
+}
+
+/* === 单选框和复选框 === */
+input[type="checkbox"],
+input[type="radio"] {
+    filter: none !important;
+    appearance: none;
+    -webkit-appearance: none;
+    width: 16px;
+    height: 16px;
+    border: none;
+    outline: 1.5px solid #495057;
+    outline-offset: 0;
+    background: #ffffff !important;
+    border-radius: 3px;
+    position: relative;
+    cursor: pointer;
+}
+
+input[type="radio"] {
+    border-radius: 50% !important;
+}
+
+input[type="checkbox"]:checked,
+input[type="radio"]:checked {
+    background: #4dabf7 !important;
+    border-color: #4dabf7 !important;
+}
+
+input[type="checkbox"]:checked::before {
+    content: "✓";
+    position: absolute;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 12px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+input[type="radio"]:checked::before {
+    content: "";
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    background: #ffffff;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+input[type="checkbox"]:hover,
+input[type="radio"]:hover {
+    border-color: #4dabf7 !important;
+}
+
+/* === left-panel 的 quick-search === */
+
+/* 1. 给 quick-search 整体左侧 10 px 内边距 👇 */
+.quick-search {
+    padding: 10px !important;
+}
+
+/* 2. 按钮隐身且不占宽度 👇 */
+.quick-search .search-button {
+    visibility: hidden;
+    width: 0 !important;
+    min-width: 0 !important;
+    padding: 0 !important;
+    border: 0 !important;
+    margin: 0 !important;
+}
+
+/* 3. 输入框圆角收回，视觉对齐 👇*/
+.quick-search .form-control {
+    border-top-left-radius: var(--bs-border-radius-sm) !important;
+    border-bottom-left-radius: var(--bs-border-radius-sm) !important;
+    background-color: #ffffff !important;
+    border: 1px solid #e1e1e1 !important;
+}
+
+/* === 文章笔记编辑页面 === */
+
+/* 标题颜色+字号 👇 */
+.note-detail-editable-text h1 { color: #2c3e50; font-size: 2.2em; }
+.note-detail-editable-text h2 { color: #34495e; font-size: 1.8em; }
+.note-detail-editable-text h3 { color: #495057; font-size: 1.5em; }
+.note-detail-editable-text h4 { color: #6c757d; font-size: 1.3em; }
+
+/*  加粗 👇 */
+.note-detail-editable-text strong,
+.note-detail-editable-text b {
+color: #e74c3c;
+font-weight: 700;
+}
+
+/* 行内代码 👇*/
+.ck-content :not(pre.hljs) > code:not(.hljs) {
+    background-color : #f8f9fa !important;
+    color            : #e83e8c !important;
+    padding          : 2px 4px !important;
+    border-radius    : 3px !important;
+    font-family      : "Consolas", "Courier New", monospace !important;
+    font-size        : 0.95em !important;
+    border           : 1px solid #e1e1e1 !important;
+}
+
+/* 引用块 👇 */
+
+/* 引用块：浅色背景 + 左侧边框 */
+.note-detail-editable-text blockquote {
+    position: relative;
+    margin: 1em 0;
+    padding: 10px 16px;
+    border-radius: 4px;
+    background-color: #f8f9fa;
+    color: #495057;
+    border-left: 4px solid #4dabf7;
+}
+
+/* 移除之前的左侧条 */
+.note-detail-editable-text blockquote::before {
+    content: none;
+}
+
+/*  图片圆角 👇 */
+.note-detail-editable-text img {
+  border-radius: 4px;
+  max-width: 100%;
+}
+
+/* 表格样式 👇 */
+/* ===== 表格整体边框 ===== */
+.ck-content .ck-table-resized,
+.ck-content .ck-table-resized td,
+.ck-content .ck-table-resized th {
+    border: 1px solid #dee2e6 !important;
+}
+
+/* ===== 表头单独高亮 ===== */
+.ck-content .ck-table-resized thead th {
+    background   : #f8f9fa !important;
+    color        : #495057 !important;
+    font-weight  : 700;
+    padding      : 6px 8px;
+}
+
+/* 滚动条样式 */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #c1c1c1;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #a8a8a8;
+}
+
+/* 高亮搜索结果的背景色 */
+.highlight {
+    background-color: #fff3cd !important;
+    color: #856404 !important;
+}

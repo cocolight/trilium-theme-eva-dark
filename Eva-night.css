@@ -1,0 +1,408 @@
+:root {
+    --theme-style: dark;
+
+    --main-font-family: Helvetica;
+    --main-font-size: normal;
+
+    --tree-font-family: Helvetica;
+    --tree-font-size: normal;
+
+    --detail-font-family: Helvetica;
+    --detail-font-size: normal;
+
+    --monospace-font-family: 'Lucida Console', 'Courier New', Courier;
+    --monospace-font-size: normal;
+
+    /* ---- drake-night 核心色板 ---- */
+    --text-color: #c9d1d9;
+    --bg-color: #0d1117;
+    --control-text-color: var(--text-color);
+    --meta-content-color: var(--text-color);
+    --active-file-border-color: #e95f59;
+    --rawblock-edit-panel-bd: #161b22;
+    --item-hover-bg-color: #21262db3;
+    --active-file-bg-color: var(--item-hover-bg-color);
+    --blur-text-color: rgba(201, 209, 217, .5);
+    --drake-accent: #e95f59;
+    --drake-highlight: #d63200;
+    --a-color: var(--drake-highlight);
+    --variable-color: var(--drake-highlight);
+    --outline-active-color: var(--a-color);
+    --code-block-bg-color: #161b22;
+    --code-block-color: #f0f6fc;
+    --title-color: #ffab70;
+    --blockquote-border-color: var(--drake-accent);
+    --blockquote-color: var(--text-color);
+    --blockquote-bg-color: #21262db3;
+    --strong-color: var(--title-color);
+    --h2-underline-color: var(--title-color);
+    --horizontal-divider-color: var(--title-color);
+    --height-light-color: var(--drake-highlight);
+    --height-light-border-color: var(--drake-highlight);
+    --yaml-color: #8b949e;
+    --yaml-bg-color: #0d1117;
+    --footnotes-bg-color: #0d1117;
+    --footnotes-highlight: #ffd760;
+    --table-border-color: #30363d;
+    --table-header-bg-color: #161b22;
+    --table-bg-color: var(--bg-color);
+    --table-n2-bg-color: #161b22;
+    --input-bg-color: var(--item-hover-bg-color);
+    --btn-hover-bg-color: var(--item-hover-bg-color);
+
+    /* ---- drake 映射---- */
+    --main-background-color: var(--bg-color);
+    --main-text-color: var(--text-color);
+    --main-border-color: var(--table-border-color);
+    --accented-background-color: var(--code-block-bg-color);
+    --more-accented-background-color: var(--table-header-bg-color);
+    --button-background-color: var(--btn-hover-bg-color);
+    --button-border-color: transparent;
+    --button-text-color: var(--text-color);
+    --button-border-radius: 3px;
+    --button-disabled-background-color: transparent;
+    --button-disabled-text-color: var(--blur-text-color);
+    --primary-button-background-color: var(--drake-accent);
+    --primary-button-text-color: #fff;
+    --primary-button-border-color: transparent;
+    --muted-text-color: var(--blur-text-color);
+    --input-text-color: var(--text-color);
+    --input-background-color: var(--code-block-bg-color);
+    --hover-item-text-color: var(--text-color);
+    --hover-item-background-color: var(--item-hover-bg-color);
+    --hover-item-border-color: var(--drake-accent);
+    --active-item-text-color: var(--text-color);
+    --active-item-background-color: var(--active-file-bg-color);
+    --active-item-border-color: transparent;
+    --menu-text-color: var(--text-color);
+    --menu-background-color: var(--table-header-bg-color);
+    --modal-background-color: var(--code-block-bg-color);
+    --modal-backdrop-color: rgba(13, 17, 23, .75);
+    --left-pane-background-color: var(--table-header-bg-color);
+    --left-pane-text-color: var(--blur-text-color);
+    --launcher-pane-background-color: var(--bg-color);
+    --launcher-pane-text-color: var(--blur-text-color);
+    --active-tab-background-color: transparent;
+    --active-tab-hover-background-color: transparent;
+    --active-tab-text-color: var(--title-color);
+    --inactive-tab-background-color: var(--table-header-bg-color);
+    --inactive-tab-hover-background-color: var(--item-hover-bg-color);
+    --inactive-tab-text-color: var(--blur-text-color);
+    --scrollbar-border-color: var(--table-border-color);
+    --tooltip-background-color: var(--code-block-bg-color);
+    --link-color: var(--a-color);
+    --mermaid-theme: dark;
+    --ck-color-code-block-label-background: var(--code-block-bg-color);
+
+    /* ---- 代码高亮变量---- */
+    --code-orange: var(--drake-highlight);
+    --code-red: var(--drake-highlight);
+    --code-blue: var(--a-color);
+    --code-blue-dark: var(--title-color);
+    --code-gray: var(--blur-text-color);
+    --code-green: #65b73b;
+    --code-green-dark: #519872;
+    --code-purple: var(--drake-accent);
+    --code-purple-dark: var(--drake-highlight);
+    --code-pink: var(--drake-highlight);
+}
+
+
+/* 日期控件的小日历图标，反白免得黑底上看不见 */
+body ::-webkit-calendar-picker-indicator {
+    filter: invert(1);
+}
+
+/* 内置代码编辑器，整体反色 + 色相旋转，让语法高亮在黑底上更顺眼看 */
+body .CodeMirror {
+    filter: invert(90%) hue-rotate(180deg);
+}
+
+/* 手绘白板 Excalidraw，再套一层反色滤镜像老式胶片 */
+.excalidraw.theme--dark {
+    --theme-filter: invert(80%) hue-rotate(180deg) !important;
+}
+
+/* 左右分栏中间那条「拖动分割条」：2 px 宽 + 深灰背景。 */
+.gutter {
+    width: 1px !important;
+    background: #252526 !important;
+}
+
+/* 树工具栏（搜索/增删按钮那一行）背景深灰。 */
+.tree-actions {
+  background-color: #252526 !important;
+}
+
+/* 第 1 级（顶层父标题）*/
+.fancytree-container > li > span .fancytree-title {
+    font-size: 1.28em;
+    font-weight: 600;
+}
+
+/* 第 2 级（子标题）*/
+.fancytree-container > li > ul > li > span .fancytree-title {
+    font-size: 1.20em;
+    font-weight: 500;
+}
+
+/* 第 3 级（孙标题）*/
+.fancytree-container > li > ul > li > ul > li > span .fancytree-title {
+    font-size: 1.16em;
+    font-weight: 400;
+}
+
+/* 第 4 级及以下（更弱）*/
+.fancytree-container > li > ul > li > ul > li > ul > li > span .fancytree-title {
+    font-size: 1.08em;
+    font-weight: 400;
+    opacity: .9;
+}
+
+/* 当前被选中的笔记节点：去掉边框 */
+span.fancytree-active .fancytree-title {
+  font-weight: normal !important;
+}
+span.fancytree-active {
+  border: 0px !important;
+  background-color: var(--active-item-background-color) !important;
+}
+
+/* 标签页右侧空白 filler，高度 90 % + 背景  */
+.tab-row-filler {
+  background-color: #282c34 !important;
+  height: 90% !important;
+}
+
+/* 把标签页的圆角切成“0”，做成直角。 */
+.tab-row-widget .note-tab .note-tab-wrapper {
+  border-radius: 0px !important;
+}
+.tab-row-widget .note-tab[active] .note-tab-wrapper {
+  font-weight: normal !important;
+  border-radius: 0px !important;
+}
+
+/* 卡片视图里的笔记块：直角 + 深灰背景。 */
+.note-book-card {
+  border-radius: 0px !important;
+  background-color: #333 !important;
+}
+
+button.tree-floating-button:hover {
+  border: 0px transparent !important;
+  background-color: #333333 !important;
+}
+button.tree-floating-button {
+    border: 0px transparent !important;
+    color: #fff !important;
+}
+
+/* CKEditor 代码块：直角边框 + 深灰背景  */
+.ck-content pre {
+  border: 1px solid #37373D !important;
+  background-color: #252526 !important;
+}
+
+/* 左上角汉堡图标：默认半透反色，鼠标移上去恢复原本颜色。 */
+div#launcher-pane .global-menu-button {
+  filter: invert(0.5);
+    background-color: transparent !important;
+}
+div#launcher-pane .global-menu-button:hover {
+  filter: invert(0);
+}
+
+/* “新建标签页”的 + 按钮 */
+.note-new-tab {
+  background-color: #282c34 !important;
+}
+
+/* 左侧菜单鼠标悬浮样式 */
+div#launcher-pane .component button:hover {
+    color: var(--code-blue) !important;
+    background: var(--item-hover-bg-color) !important;
+}
+
+/* 树节点统一高度 28 px，去掉边框。 */
+.fancytree-node {
+    height: 28px !important;
+    border: 0px solid transparent !important;
+}
+span.fancytree-node:hover {
+  border: 0px !important;
+  background-color: var(--item-hover-bg-color) !important;
+}
+
+/* 右侧属性/备注面板：背景 */
+#right-pane {
+    background-color: #252526 !important;
+}
+
+/* 所有下拉菜单：背景 */
+.dropdown-menu.show {
+    background-color: #333333 !important;
+}
+
+/* 主按钮聚焦时去掉蓝色光晕（`box-shadow:none`）。 */
+.btn-primary.focus, .btn-primary:focus {
+    box-shadow: none
+}
+
+/* 顶部 Ribbon 工具栏：字体颜色 + 下边框统一颜色 */
+.ribbon-tab-title {
+    color: #6f7676 !important;
+    border-bottom: 1px solid #6f7676 !important;
+}
+.ribbon-tab-spacer {
+    border-bottom: 1px solid #6f7676 !important;
+}
+.ribbon-button-container .icon-action {
+    color: #6f7676 !important;
+}
+.ribbon-button-container {
+    border-bottom: 1px solid #6f7676 !important;
+}
+
+/* 标题栏高度 70 px，上内边距 20 px，让标题垂直居中。 */
+.title-row {
+    height: 70px !important;
+    min-height: 70px !important;
+    padding-top: 20px !important;
+}
+
+/* 属性面板卡片头部，内边距压到 8 px，更紧凑 */
+#right-pane .card-header {
+    padding: 8px !important;
+}
+
+/* CKEditor 里下拉列表项悬停：背景 */
+.ck.ck-list__item .ck-button:hover:not(.ck-disabled) {
+    background: #04395E;
+}
+
+/* === 单选框和复选框 === */
+input[type="checkbox"],
+input[type="radio"] {
+    filter: none !important;
+    appearance: none;
+    -webkit-appearance: none;
+    width: 16px;
+    height: 16px;
+    border: none;
+    outline: 1.5px solid var(--code-blue);
+    outline-offset: 0;
+    background: var(--input-background-color) !important;
+    border-radius: 3px;
+    position: relative;
+    cursor: pointer;
+}
+input[type="radio"] {
+    border-radius: 50% !important;
+}
+input[type="checkbox"]:checked,
+input[type="radio"]:checked {
+    background: var(--code-blue) !important;
+    border-color: var(--code-blue) !important;
+}
+input[type="checkbox"]:checked::before {
+    content: "✓";
+    position: absolute;
+    color: var(--input-background-color);
+    font-weight: bold;
+    font-size: 12px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+input[type="radio"]:checked::before {
+    content: "";
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    background: var(--input-background-color);
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+input[type="checkbox"]:hover,
+input[type="radio"]:hover {
+    border-color: var(--code-blue) !important;
+}
+
+/* === left-panel 的 quick-search === */
+.quick-search {
+    padding: 10px !important;
+}
+.quick-search .search-button {
+    visibility: hidden;
+    width: 0 !important;
+    min-width: 0 !important;
+    padding: 0 !important;
+    border: 0 !important;
+    margin: 0 !important;
+}
+.quick-search .form-control {
+    border-top-left-radius: var(--bs-border-radius-sm) !important;
+    border-bottom-left-radius: var(--bs-border-radius-sm) !important;
+}
+
+/* === 文章笔记编辑页面 === */
+.note-detail-editable-text h1 { color: var(--drake-highlight); font-size: 2.2em; }
+.note-detail-editable-text h2 { color: var(--drake-highlight); font-size: 1.8em; }
+.note-detail-editable-text h3 { color: var(--drake-highlight); font-size: 1.5em; }
+.note-detail-editable-text h4 { color: var(--drake-highlight); font-size: 1.3em; }
+
+.note-detail-editable-text strong,
+.note-detail-editable-text b {
+    color: var(--a-color);
+    font-weight: 700;
+}
+
+.ck-content :not(pre.hljs) > code:not(.hljs) {
+    background-color: var(--code-block-bg-color);
+    color: var(--drake-highlight);
+    padding: 2px 4px;
+    border-radius: 3px;
+    font-family: "Consolas", "Courier New", monospace;
+    font-size: 0.95em;
+    border: 1px solid var(--table-border-color);
+}
+
+.note-detail-editable-text blockquote {
+    position: relative;
+    margin: 1em 0;
+    padding: 10px 16px;
+    border-radius: 2px;
+    background-color: var(--blockquote-bg-color);
+    color: var(--blockquote-color);
+    border-left: none;
+}
+.note-detail-editable-text blockquote::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 3px;
+    background: var(--blockquote-border-color);
+    border-radius: 2px 0 0 2px;
+}
+
+.note-detail-editable-text img {
+    border-radius: 4px;
+    max-width: 100%;
+}
+
+.ck-content .ck-table-resized,
+.ck-content .ck-table-resized td,
+.ck-content .ck-table-resized th {
+    border: 1.5px solid var(--text-color);
+}
+.ck-content .ck-table-resized thead th {
+    background: var(--table-header-bg-color);
+    color: var(--text-color);
+    font-weight: 700;
+    padding: 6px 8px;
+}
