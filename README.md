@@ -6,8 +6,6 @@ Trilium eva Dark Theme 是一个 trilium 主题，提供了更好看、更简约
 
 ## 预览
 
-![image-20251018191346155](./assets/image-20251018191346155.png)
-
 ![image-20251019110655720](./assets/image-20251019110655720.png)
 
 ![image-20251018191416899](./assets/image-20251018191416899.png)
