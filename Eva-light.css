@@ -41,7 +41,7 @@
     --input-background-color: #ffffff;
 
     --hover-item-text-color: #495057;
-    --hover-item-background-color: #f8f9fa;
+    --hover-item-background-color: #68b6f6;
     --hover-item-border-color: #007bff;
 
     /* 调整选中项颜色为更柔和的蓝色 */
@@ -168,7 +168,7 @@ span.fancytree-active .fancytree-title {
 /* 当前被选中的笔记节点：使用更柔和的蓝色背景 */
 span.fancytree-active {
   border: 0px !important;
-  background-color: #4dabf7 !important;
+  background-color: var(--active-item-background-color) !important;
 }
 
 /* 标签页右侧空白 filler */
@@ -196,7 +196,7 @@ span.fancytree-active {
 
 button.tree-floating-button:hover {
   border: 0px transparent !important;
-  background-color: #4dabf7 !important;
+  background-color: var(--active-item-background-color) !important;
 }
 
 /* 左下角"+"浮动按钮：无边框，悬停时背景 */
@@ -225,9 +225,9 @@ div#launcher-pane .global-menu-button {
     background-color: transparent !important;
 }
 
-div#launcher-pane .global-menu-button:hover {
+/* div#launcher-pane .global-menu-button:hover {
   filter: invert(0.3);
-}
+} */
 
 /* "新建标签页"的 + 按钮 */
 .note-new-tab {
@@ -248,7 +248,7 @@ div#launcher-pane .component button:hover {
 
 span.fancytree-node:hover {
   border: 0px !important;
-  background-color: #e3f2fd !important;
+  background-color: var(--hover-item-background-color) !important;
 }
 
 /* 右侧属性/备注面板：背景 */
@@ -327,8 +327,8 @@ input[type="radio"] {
 
 input[type="checkbox"]:checked,
 input[type="radio"]:checked {
-    background: #4dabf7 !important;
-    border-color: #4dabf7 !important;
+    background: var(--active-item-background-color) !important;
+    border-color: var(--active-item-background-color) !important;
 }
 
 input[type="checkbox"]:checked::before {
@@ -356,7 +356,7 @@ input[type="radio"]:checked::before {
 
 input[type="checkbox"]:hover,
 input[type="radio"]:hover {
-    border-color: #4dabf7 !important;
+    border-color: var(--active-item-background-color) !important;
 }
 
 /* === left-panel 的 quick-search === */
@@ -420,7 +420,7 @@ font-weight: 700;
     border-radius: 4px;
     background-color: #f8f9fa;
     color: #495057;
-    border-left: 4px solid #4dabf7;
+    border-left: 4px solid var(--active-item-background-color);
 }
 
 /* 移除之前的左侧条 */
